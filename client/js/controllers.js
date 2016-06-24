@@ -74,7 +74,8 @@ app.controller('questionController', ['$scope','socket', function QuestionContro
     // We don't care about the ordering answers so we don't assign them global IDs,
     // and as such we can simply push it into the local list (the server won't rebroadcast it to us)
     $scope.question.answers.push({
-      body: answerText
+      body: answerText,
+      timestamp: Date.now()
     }); 
 
     $scope.answerText = ''; // Clear the answer field
