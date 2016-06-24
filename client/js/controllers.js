@@ -35,7 +35,8 @@ app.controller('appController', ['$scope', 'socket', 'currentServerState', funct
       return;
 
     var question = {
-      body: questionText
+      body: questionText,
+      author: $scope.nickname
     };
 
     socket.emit('submit:question', question); // Submit the question.

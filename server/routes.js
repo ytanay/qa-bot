@@ -32,7 +32,7 @@ module.exports = function(app, io) {
 
     // On question submission
     socket.on('submit:question', function(question) {
-      if(!question.body) // Sanity check
+      if(!question.body || question.author === 'bot') // Sanity check
         return;
 
       var id = question.id = (questionId++).toString(); // Assign an ID to the submitted question
