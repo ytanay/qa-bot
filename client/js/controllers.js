@@ -9,7 +9,7 @@ app.controller('appController', ['$scope', 'socket', 'currentServerState', funct
     $scope.connectionStatus = error;
   });
 
-  socket.on('reconnect', function(error){ // Resets the connection error upon a sucessful connection
+  socket.on('reconnect', function(error){ // Resets the connection status upon a sucessful connection
     $scope.connectionStatus = null;
   });
 
