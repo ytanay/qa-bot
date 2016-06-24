@@ -22,7 +22,7 @@ app.controller('appController', ['$scope', 'socket', 'currentServerState', funct
   });
 
   socket.on('state:current', function(data){ // Once we connect, the server should immediately emit its current state
-    $scope.questions = data; // Array of {body: String, answers: [{body: String, author: optional String}]}
+    $scope.questions = data; // Map of {body: String, answers: [{body: String, author: optional String}]}
     $scope.connectionStatus = null;
   });
 

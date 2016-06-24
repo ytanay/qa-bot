@@ -5,6 +5,9 @@ module.exports = function(app, io) {
   var questionId = 0; // A counter for question IDs
   var questions = {}; // A map of original questions (as opposed to the bot's map of consolidated questions)
 
+  // We use numeric IDs with a regular object (instead of an array) so as to allow a client not to load the entire question history
+  // and yet prevent allocating an unnecessarily large blank array (from the client's perspective, the indices will not start at 0). 
+  
   // Sends the index page
 	app.get('/', function(req, res) {
 		res.sendFile('./public/index.html');
