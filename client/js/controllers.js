@@ -1,6 +1,6 @@
 
 // App Controller
-app.controller('appController', ['$scope', 'socket', 'currentServerState', function AppController($scope, socket, currentServerState) {
+app.controller('appController', ['$scope', 'socket', function AppController($scope, socket) {
 
   /** Socket setup */
   $scope.connectionStatus = 'Getting ready...';

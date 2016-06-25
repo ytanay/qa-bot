@@ -25,12 +25,3 @@ app.factory('socket', function ($rootScope) {
     }
   };
 });
-
-// Get a list of existing questions
-app.factory('currentServerState', ['$http', function($http) {
-  return {
-    get: function() {
-      return $http.get('/questions');
-    }
-  }
-}]);
