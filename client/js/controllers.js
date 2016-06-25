@@ -9,7 +9,7 @@ app.controller('appController', ['$scope', 'socket', function AppController($sco
     $scope.connectionStatus = error;
   });
 
-  socket.on('reconnect', function(error){ // Resets the connection status upon a sucessful connection
+  socket.on('reconnect', function(error){ // Resets the connection status upon a successful connection
     $scope.connectionStatus = null;
   });
 
@@ -42,9 +42,9 @@ app.controller('appController', ['$scope', 'socket', function AppController($sco
     socket.emit('submit:question', question); // Submit the question.
 
     // We can't add the question directly to our local scope as,
-    // without authentication, only the server can generate authorative 
+    // without authentication, only the server can generate authoritative 
     // global IDs for each question without risk of collision.
-    // In this case, it is more elgant to send the question to the server,
+    // In this case, it is more elegant to send the question to the server,
     // have it generate an ID and forward it all sockets (incl. this one),
     // where it will be added to the list as usual.
 

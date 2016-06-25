@@ -1,6 +1,6 @@
 /**
  * A simple chat bot. 
- * Recieves questions & answers, consolidates their format, and returns previous answers when it can.
+ * Receives questions & answers, consolidates their format, and returns previous answers when it can.
  */
 
 // Generic interjections to append before a bot's answer
@@ -27,7 +27,7 @@ function sampleFromArray(array){
 
 module.exports = {
 
-  questions: {}, // Maps IDs to consolidated questions. Allows effeicent lookups of a question by its ID as consolidation may be expensive.
+  questions: {}, // Maps IDs to consolidated questions. Allows efficient lookups of a question by its ID as consolidation may be expensive.
   knowledge: {}, // Maps consolidated questions to answers.
   
   // Called for every submitted question
