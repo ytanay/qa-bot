@@ -67,9 +67,10 @@ module.exports = {
       return [];
 
     return [{
-      author: 'bot',
-      body: 'Bot: ' + sampleFromArray(INTERJECTIONS) + answers.reduce(function(memo, answer, index){
-        return memo + '\n' + (index+1) + '. ' + answer
+      origin: 'bot',
+      timestamp: Date.now(),
+      body: 'Bot: ' + sampleFromArray(INTERJECTIONS) + '\n' + answers.reduce(function(memo, answer, index){
+        return memo + (index+1) + '. ' + answer + '\n'
       }, '')
     }];
   },
