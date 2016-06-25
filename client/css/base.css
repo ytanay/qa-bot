@@ -26,8 +26,15 @@ body {  /* Margin bottom by footer height */
   padding: 0 15px;
 }
 
+.question form {
+  margin-left: 25px; /* 40px (padding for answer list) - 15px (Bootstrap's row margin) */
+}
 
-.well { /* Use wells for the bot's responses */
+.question form .submit {
+  padding-left: 0;
+}
+
+.answers .well { /* Use wells for the bot's responses */
   white-space: pre-line;
   width: 320px;
 }

@@ -33,16 +33,16 @@
       <div ng-repeat="(questionId, question) in questions track by $index" ng-controller="questionController" class="question">
         <h4>{{question.body}} <span class="label label-default pull-right">By {{question.author || 'anonymous'}} on {{question.timestamp | date:'d/M/yy h:mm a'}}</span></h4>
         <ul class="answers">
-          <li ng-repeat="answer in question.answers" ng-class="{'well': answer.author === 'bot'}">{{answer.body}} <small ng-show="answer.author !== 'bot'">(on {{answer.timestamp | date:'d/M hh:mm'}})</small></li>
-          <li>
-            <form class="form-inline" ng-submit="submitAnswer()">
-              <div class="form-group">
-                <input type="text" class="form-control" name="answerText" ng-model="answerText">
-              </div>
-              <button type="submit" class="btn btn-default" ng-disabled="connectionStatus">Submit Answer</button>
-            </form>
-          </li>
+          <li ng-repeat="answer in question.answers" ng-class="{'well': answer.origin === 'bot'}">{{answer.body}} <small>(on {{answer.timestamp | date:'d/M hh:mm'}})</small></li>
         </ul>
+        <form class="row" ng-submit="submitAnswer()">
+          <div class="col-xs-6 col-md-3">
+            <input type="text" class="form-control input-sm" name="answerText" ng-model="answerText">
+          </div>
+          <div class="col-xs-6 submit">
+            <button type="submit" class="btn btn-default btn-sm" ng-disabled="connectionStatus">Submit Answer</button>
+          </div>
+        </form>
       </div> <!-- end question list -->
 
     </div> <!-- end .container -->
